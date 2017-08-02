@@ -1,0 +1,16 @@
+%h1 Exercises
+
+%table
+  %tr
+  %th Exercise id
+  %th Exercise
+  %th User
+  %th Weigth
+  - @view_exercises.each do |i|
+    %tr
+    %td= i.values_at(:id).to_s.gsub(/[\[\"\]]/,'')
+    %td= i.values_at(:exercise).to_s.gsub(/[\[\"\]]/,'')
+    %td= i.values_at(:user).to_s.gsub(/[\[\"\]]/,'')
+    %td= i.values_at(:weight).to_s.gsub(/[\[\"\]]/,'')
+
+

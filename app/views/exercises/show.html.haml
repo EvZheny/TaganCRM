@@ -1,0 +1,5 @@
+%h1= @view_exercises.values_at(:user).to_s.gsub(/[\[\"\]]/,'')
+
+%ui
+  %h3= @view_exercises.values_at(:exercise).to_s.gsub(/[\[\"\]]/,'')
+  %h3= @view_exercises.values_at(:weight).to_s.gsub(/[\[\"\]]/,'')
