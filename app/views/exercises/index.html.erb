@@ -1,0 +1,24 @@
+<h1>Exercises</h1>
+
+<% if @exercises.empty? %>
+    <b>No items in store</b>
+<% else %>
+    <table>
+      <tr>
+        <th> Exercise id_</th>
+        <th> Exercise </th>
+        <th> User </th>
+        <th> Weigth </th>
+      </tr>
+
+      <% @exercises.each do |i| %>
+          <tr>
+            <td><%= i.id%></td>
+            <td><%= ExerciseList.find(i.exercise_list_id).exercise%></td>
+            <td><%= User.find(i.user_name_id).first_name + " " + User.find(i.user_name_id).last_name %> </td>
+            <td><%= i.weight%> </td>
+          </tr>
+      <% end %>
+
+    </table>
+<% end %>

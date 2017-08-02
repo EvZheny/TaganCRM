@@ -1,0 +1,17 @@
+<h1>Create new Exercise</h1>
+
+<%= form_for @exercise do |f| %>
+
+    <p>Exercise:  <%= f.select :exercise_list_id, options_for_select(
+        ExerciseList.all.map { |ex| [ex.exercise, ex.id] }) %>
+    </p>
+
+    <p>User:      <%= f.select :user_name_id, options_for_select(
+        User.all.map { |user| [user.first_name + " " + user.last_name, user.id] })%>
+    </p>
+
+    <p>Weight:    <%= f.text_field :weight%></p>
+
+    <p><%= f.submit "Create"  %></p>
+
+<% end %>

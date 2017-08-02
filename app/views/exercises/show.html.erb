@@ -1,0 +1,6 @@
+<h1><%= User.find(@exercise.user_name_id).first_name + " " + User.find(@exercise.user_name_id).last_name%></h1>
+
+<ui>
+  <h3><%= ExerciseList.find(@exercise.exercise_list_id).exercise %></h3>
+  <h3>Вес: <%= @exercise.weight %></h3>
+</ui>
